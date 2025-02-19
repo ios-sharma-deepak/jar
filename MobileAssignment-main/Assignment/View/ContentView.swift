@@ -10,13 +10,16 @@ import SwiftUI
 struct ContentView: View {
     
     @StateObject private var viewModel = ContentViewModel()
+    @State var searchText : String = ""
     
     @State private var path: [DeviceData] = [] // Navigation path
 
     var body: some View {
         NavigationStack(path: $path) {
+            
             Group {
                 if let computers = viewModel.data, !computers.isEmpty {
+                    
                     DevicesList(devices: computers) { selectedComputer in
                         viewModel.navigateToDetail(navigateDetail: selectedComputer)
                     }

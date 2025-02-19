@@ -65,9 +65,9 @@
 			isa = PBXGroup;
 			children = (
 				0C7ED3552D30FD8A003DCAA1 /* models */,
-				0C7ED3522D30FBC9003DCAA1 /* api */,
-				0C7ED34F2D30FB9E003DCAA1 /* vm */,
-				0C7ED34E2D30FB90003DCAA1 /* ui */,
+				0C7ED3522D30FBC9003DCAA1 /* Networking */,
+				0C7ED34F2D30FB9E003DCAA1 /* ViewModel */,
+				0C7ED34E2D30FB90003DCAA1 /* View */,
 				0C7046822D27F8900008440F /* AssignmentApp.swift */,
 				0C7046862D27F8920008440F /* Assets.xcassets */,
 				0C7046882D27F8920008440F /* Assignment.entitlements */,
@@ -84,7 +84,7 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		0C7ED34E2D30FB90003DCAA1 /* ui */ = {
+		0C7ED34E2D30FB90003DCAA1 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				0C7046842D27F8900008440F /* ContentView.swift */,
@@ -92,23 +92,23 @@
 				0C7ED35C2D31014F003DCAA1 /* DetailView.swift */,
 				0C7ED3602D314E15003DCAA1 /* AssignmentText.swift */,
 			);
-			path = ui;
+			path = View;
 			sourceTree = "<group>";
 		};
-		0C7ED34F2D30FB9E003DCAA1 /* vm */ = {
+		0C7ED34F2D30FB9E003DCAA1 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 				0C7ED3502D30FBA9003DCAA1 /* ContentViewModel.swift */,
 			);
-			path = vm;
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		0C7ED3522D30FBC9003DCAA1 /* api */ = {
+		0C7ED3522D30FBC9003DCAA1 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
 				0C7ED3532D30FBDA003DCAA1 /* ApiService.swift */,
 			);
-			path = api;
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		0C7ED3552D30FD8A003DCAA1 /* models */ = {

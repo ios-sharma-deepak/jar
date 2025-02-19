@@ -10,7 +10,17 @@ import SwiftUI
 struct ContentView: View {
     
     @StateObject private var viewModel = ContentViewModel()
-    @State var searchText : String = ""
+    
+    @State private var searchText: String = ""
+    
+    var searchResults: [DeviceData]? {
+            if searchText.isEmpty {
+                return viewModel.data
+            } else {
+                return viewModel.data?.filter { $0.name.lowercased().contains(searchText.lowercased()) }
+            }
+        }
+    
     
     @State private var path: [DeviceData] = [] // Navigation path
 
@@ -18,11 +28,13 @@ struct ContentView: View {
         NavigationStack(path: $path) {
             
             Group {
-                if let computers = viewModel.data, !computers.isEmpty {
+                if let computers = searchResults, !computers.isEmpty {
                     
                     DevicesList(devices: computers) { selectedComputer in
                         viewModel.navigateToDetail(navigateDetail: selectedComputer)
                     }
+                    .searchable(text: $searchText)
+                   
                 } else {
                     ProgressView("Loading...")
                 }
@@ -38,12 +50,6 @@ struct ContentView: View {
             }
             .onAppear {
                 viewModel.fetchAPI()
-//                let navigate = viewModel.navigateDetail
-//                if (viewModel.navigateDetail != nil) {
-//                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-//                        path.append(navigate!)
-//                    }
-//                }
             }
         }
     }

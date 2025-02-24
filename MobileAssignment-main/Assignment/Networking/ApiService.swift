@@ -19,6 +19,7 @@ class ApiService : NSObject {
                 print("Network error: \(error.localizedDescription)")
                 completion([]) // Return an empty array on network failure
                 
+                // return catch responce
                 
                 return
             }
